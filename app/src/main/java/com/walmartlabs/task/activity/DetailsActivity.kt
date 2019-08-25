@@ -68,7 +68,7 @@ class DetailsActivity : AppCompatActivity() {
             Glide.with(applicationContext)
                     .load(URLs.URL_ROOT + productImagew!!)
                     .centerCrop()
-                    .error(R.drawable.default_background)
+                    .error(R.drawable.ic_launcher_round)
                     .into(productImageShow)
         } catch (e: NullPointerException) {
             e.printStackTrace()

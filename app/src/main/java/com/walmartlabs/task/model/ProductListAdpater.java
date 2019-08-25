@@ -2,6 +2,7 @@ package com.walmartlabs.task.model;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,13 +85,12 @@ public class ProductListAdpater extends BaseAdapter {
             }
             if (String.valueOf(mylist.get(position).getInStock()).equals("false")) {
                 view.inStock.setText("Out Of Stock ");
-                //view.inStock.setTextColor(Color.parseColor("#FF0000"));
             }
             try {
                 Glide.with(mContext)
                         .load(URL.URL_ROOT+mylist.get(position).getProductImage())
                         .centerCrop()
-                        .error(R.drawable.default_background)
+                        .error(R.drawable.ic_launcher_round)
                         .animate(android.R.anim.fade_in)
                         .into(view.productImage);
             }catch (NullPointerException e){
